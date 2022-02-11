@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Chart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bio-pj-dAv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqO-Kh-vPO" customClass="PieChartView" customModule="Chart" customModuleProvider="target">
+                                        <rect key="frame" x="83" y="285" width="248" height="248"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPK-TO-TSz">
+                                                <rect key="frame" x="69" y="69" width="110" height="110"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TPK-TO-TSz" secondAttribute="height" multiplier="1:1" id="6iM-b2-H3R"/>
+                                                    <constraint firstAttribute="width" constant="110" id="dzo-7R-Hx7"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="55"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="TPK-TO-TSz" firstAttribute="centerX" secondItem="aqO-Kh-vPO" secondAttribute="centerX" id="6eE-Ur-pPv"/>
+                                            <constraint firstItem="TPK-TO-TSz" firstAttribute="centerY" secondItem="aqO-Kh-vPO" secondAttribute="centerY" id="Pop-oV-snZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="aqO-Kh-vPO" firstAttribute="width" secondItem="Bio-pj-dAv" secondAttribute="width" multiplier="0.6" id="0Dn-gF-EKS"/>
+                                    <constraint firstItem="aqO-Kh-vPO" firstAttribute="width" secondItem="aqO-Kh-vPO" secondAttribute="height" multiplier="1:1" id="9BA-ZH-343"/>
+                                    <constraint firstItem="aqO-Kh-vPO" firstAttribute="centerX" secondItem="Bio-pj-dAv" secondAttribute="centerX" id="OZ0-pu-UIH"/>
+                                    <constraint firstItem="aqO-Kh-vPO" firstAttribute="centerY" secondItem="Bio-pj-dAv" secondAttribute="centerY" id="vlx-7K-9Mg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bio-pj-dAv" secondAttribute="trailing" id="7F2-xw-X5h"/>
+                            <constraint firstItem="Bio-pj-dAv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h9T-sx-lcH"/>
+                            <constraint firstItem="Bio-pj-dAv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pEz-5S-9tb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bio-pj-dAv" secondAttribute="bottom" id="qMZ-Fo-hvg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="aqO-Kh-vPO" id="AkU-kf-mjQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
