@@ -6,7 +6,8 @@
 import UIKit
 
 struct Segment {
-    var color: UIColor
+    var pieColor: UIColor
+    var textColor: UIColor
     var value: CGFloat
     var title: String
 }
@@ -16,15 +17,13 @@ class PieChartView: UIView {
     var segments = [Segment]() {
         didSet {
             totalValue = segments.reduce(0) { $0 + $1.value }
-
-          print("totalValue == \(totalValue)")
             setupLabels()
             setNeedsDisplay()
             layoutLabels()
         }
     }
 
-    private var totalValue: CGFloat = 1
+    var totalValue: CGFloat = 1
     private var labels: [UILabel] = []
 
     override init(frame: CGRect) {
@@ -68,7 +67,7 @@ class PieChartView: UIView {
             ctx?.addArc(center: center, radius: radius - lineWidth, startAngle: currentAngle, endAngle: currentAngle + angle, clockwise: false)
             ctx?.closePath()
 
-            ctx?.setFillColor(segment.color.cgColor)
+            ctx?.setFillColor(segment.pieColor.cgColor)
             ctx?.fillPath()
 
             ctx?.beginPath()
@@ -76,7 +75,7 @@ class PieChartView: UIView {
             ctx?.addArc(center: center, radius: radius - (lineWidth / 2), startAngle: currentAngle, endAngle: currentAngle + angle, clockwise: false)
             ctx?.closePath()
 
-            ctx?.setStrokeColor(UIColor.white.cgColor)
+            ctx?.setStrokeColor(UIColor.systemBackground.cgColor)
             ctx?.strokePath()
 
             currentAngle += angle
@@ -111,20 +110,20 @@ class PieChartView: UIView {
         }
 
         for (lbl, segment) in zip(labels, segments) {
-          let titleFont = UIFont.systemFont(ofSize: 13, weight: .regular)
-          let valueFont = UIFont.systemFont(ofSize: 16, weight: .medium)
+          let titleFont = UIFont(name: "HiraginoSans-W6", size: 13)
+          let valueFont = UIFont(name: "HiraginoSans-W6", size: 16)
           let paragraphStyle = NSMutableParagraphStyle()
-          paragraphStyle.lineSpacing = 2
+          paragraphStyle.lineSpacing = 4
           paragraphStyle.alignment = .center
 
           let attributesTitle: [NSAttributedString.Key: Any] = [
               .font: titleFont,
-              .foregroundColor: segment.color,
+              .foregroundColor: segment.textColor,
               .paragraphStyle: paragraphStyle
           ]
           let attributesValue: [NSAttributedString.Key: Any] = [
               .font: valueFont,
-              .foregroundColor: segment.color,
+              .foregroundColor: segment.textColor,
               .paragraphStyle: paragraphStyle
           ]
 
@@ -164,23 +163,27 @@ class PieChartView: UIView {
 class ViewController : UIViewController {
 
   @IBOutlet private weak var pieChartView: PieChartView!
+  @IBOutlet private weak var pieChartCenterView: UIView!
+  @IBOutlet private weak var pieChartSumLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     pieChartView.segments = [
-      Segment.init(color: UIColor.lightGray, value: 2.2, title: "元金"),
-      Segment.init(color: UIColor.systemTeal, value: 0.9, title: "管理費/\n修繕積立費"),
-      Segment.init(color: UIColor.magenta, value: 0.2, title: "金利")
+      Segment.init(pieColor: UIColor(named: "color_chart_green")!,
+                   textColor: UIColor(named: "color_chart_text_green")!,
+                   value: 0.8,
+                   title: "元金"),
+      Segment.init(pieColor: UIColor(named: "color_chart_yellow")!,
+                   textColor: UIColor(named: "color_chart_text_orange")!,
+                   value: 0.4,
+                   title: "管理費/\n修繕積立費"),
+      Segment.init(pieColor: UIColor(named: "color_chart_red")!,
+                   textColor: UIColor(named: "color_chart_text_red")!,
+                   value: 0.2,
+                   title: "金利")
     ]
-
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-      self.pieChartView.segments = [
-        Segment.init(color: UIColor.lightGray, value: 1, title: "元金"),
-        Segment.init(color: UIColor.systemTeal, value: 0.8, title: "管理費/\n修繕積立費"),
-        Segment.init(color: UIColor.magenta, value: 0.3, title: "金利")
-      ]
-    })
+    pieChartSumLabel.text = "\(Double(round(100 * pieChartView.totalValue) / 100))"
   }
 }
 
