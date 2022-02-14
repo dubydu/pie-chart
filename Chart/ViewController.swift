@@ -16,6 +16,8 @@ class PieChartView: UIView {
     var segments = [Segment]() {
         didSet {
             totalValue = segments.reduce(0) { $0 + $1.value }
+
+          print("totalValue == \(totalValue)")
             setupLabels()
             setNeedsDisplay()
             layoutLabels()
@@ -45,7 +47,7 @@ class PieChartView: UIView {
         let ctx = UIGraphicsGetCurrentContext()
         ctx?.setLineWidth(lineWidth)
 
-        var currentAngle: CGFloat = 0
+        var currentAngle: CGFloat = -(CGFloat.pi / 2)
 
         if totalValue <= 0 {
             totalValue = 1
@@ -55,8 +57,11 @@ class PieChartView: UIView {
         for i in iRange {
             let segment = segments[i]
             let percent = segment.value / totalValue
+            print(segment)
 
             let angle = anglePI2 * percent
+
+          print("-- \(angle)")
 
             ctx?.beginPath()
             ctx?.move(to: center)
@@ -106,7 +111,6 @@ class PieChartView: UIView {
         }
 
         for (lbl, segment) in zip(labels, segments) {
-
           let titleFont = UIFont.systemFont(ofSize: 13, weight: .regular)
           let valueFont = UIFont.systemFont(ofSize: 16, weight: .medium)
           let paragraphStyle = NSMutableParagraphStyle()
@@ -135,9 +139,10 @@ class PieChartView: UIView {
     func layoutLabels() {
         let anglePI2 = CGFloat.pi * 2
         let center = CGPoint.init(x: bounds.size.width / 2, y: bounds.size.height / 2)
-        let radius = (min(bounds.size.width / 2, bounds.size.height / 2) + 30)
+        let radius = (min(bounds.size.width / 2, bounds.size.height / 2) * 1.3)
 
-        var currentAngle: CGFloat = 0
+        var currentAngle: CGFloat = -(CGFloat.pi / 2)
+
         let iRange = 0 ..< labels.count
         for i in iRange {
             let lbl = labels[i]
@@ -164,19 +169,18 @@ class ViewController : UIViewController {
     super.viewDidLoad()
 
     pieChartView.segments = [
-      Segment.init(color: UIColor.lightGray, value: 1.2, title: "元金"),
-      Segment.init(color: UIColor.magenta, value: 0.2, title: "金利"),
-      Segment.init(color: UIColor.systemTeal, value: 0.9, title: "管理費/\n修繕積立費")
+      Segment.init(color: UIColor.lightGray, value: 2.2, title: "元金"),
+      Segment.init(color: UIColor.systemTeal, value: 0.9, title: "管理費/\n修繕積立費"),
+      Segment.init(color: UIColor.magenta, value: 0.2, title: "金利")
     ]
 
-    // Update data after 5 seconds
-    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
       self.pieChartView.segments = [
-        Segment.init(color: UIColor.lightGray, value: 0.7, title: "元金"),
-        Segment.init(color: UIColor.magenta, value: 0.4, title: "金利"),
-        Segment.init(color: UIColor.systemTeal, value: 0.1, title: "管理費/\n修繕積立費"),
+        Segment.init(color: UIColor.lightGray, value: 1, title: "元金"),
+        Segment.init(color: UIColor.systemTeal, value: 0.8, title: "管理費/\n修繕積立費"),
+        Segment.init(color: UIColor.magenta, value: 0.3, title: "金利")
       ]
-    }
+    })
   }
 }
 
