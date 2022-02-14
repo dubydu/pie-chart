@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8130FD5127BA55D6003BACEC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130FD4F27BA55D6003BACEC /* ChartView.swift */; };
+		8130FD5227BA55D6003BACEC /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8130FD5027BA55D6003BACEC /* ChartView.xib */; };
 		81BD819727B5FE0900C2319B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819627B5FE0900C2319B /* AppDelegate.swift */; };
 		81BD819927B5FE0900C2319B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819827B5FE0900C2319B /* SceneDelegate.swift */; };
 		81BD819B27B5FE0900C2319B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819A27B5FE0900C2319B /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8130FD4F27BA55D6003BACEC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8130FD5027BA55D6003BACEC /* ChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		81BD819327B5FE0900C2319B /* Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD819627B5FE0900C2319B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BD819827B5FE0900C2319B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8130FD4A27BA55A8003BACEC /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				8130FD4F27BA55D6003BACEC /* ChartView.swift */,
+				8130FD5027BA55D6003BACEC /* ChartView.xib */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
 		81BD818A27B5FE0900C2319B = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		81BD819527B5FE0900C2319B /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				8130FD4A27BA55A8003BACEC /* ChartView */,
 				81BD819627B5FE0900C2319B /* AppDelegate.swift */,
 				81BD819827B5FE0900C2319B /* SceneDelegate.swift */,
 				81BD819A27B5FE0900C2319B /* ViewController.swift */,
@@ -128,6 +142,7 @@
 				81BD81A327B5FE0C00C2319B /* LaunchScreen.storyboard in Resources */,
 				81BD81A027B5FE0C00C2319B /* Assets.xcassets in Resources */,
 				81BD819E27B5FE0900C2319B /* Main.storyboard in Resources */,
+				8130FD5227BA55D6003BACEC /* ChartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,7 @@
 				81BD819B27B5FE0900C2319B /* ViewController.swift in Sources */,
 				81BD819727B5FE0900C2319B /* AppDelegate.swift in Sources */,
 				81BD819927B5FE0900C2319B /* SceneDelegate.swift in Sources */,
+				8130FD5127BA55D6003BACEC /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
