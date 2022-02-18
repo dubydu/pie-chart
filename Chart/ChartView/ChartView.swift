@@ -40,10 +40,8 @@ class ChartView: UIView {
     }
 
     private func setupUI() {
-
         pieChartView.segments = listSegment
         pieChartSumLabel.text = "\(Double(round(100 * pieChartView.totalValue) / 100))"
-
         for (label, segment) in zip(valueLabels, listSegment) {
             label.text = "\(Double(round(100 * segment.value) / 100))万円 / 月"
         }
