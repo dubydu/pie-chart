@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-3f-qnY" customClass="ChartView" customModule="Chart" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="420"/>
+                                        <rect key="frame" x="16" y="0.0" width="382" height="520"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="420" id="zEh-65-J8K"/>
+                                            <constraint firstAttribute="width" secondItem="DtK-3f-qnY" secondAttribute="height" multiplier="191:260" id="GGa-Tz-NlH"/>
                                         </constraints>
                                     </view>
                                 </subviews>

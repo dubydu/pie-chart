@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8130FD5127BA55D6003BACEC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130FD4F27BA55D6003BACEC /* ChartView.swift */; };
 		8130FD5227BA55D6003BACEC /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8130FD5027BA55D6003BACEC /* ChartView.xib */; };
+		8185145E27C75C090096A021 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185145D27C75C090096A021 /* UIView+Extension.swift */; };
+		8185146027C75C580096A021 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8185145F27C75C580096A021 /* PieChartView.swift */; };
 		81BD819727B5FE0900C2319B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819627B5FE0900C2319B /* AppDelegate.swift */; };
 		81BD819927B5FE0900C2319B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819827B5FE0900C2319B /* SceneDelegate.swift */; };
 		81BD819B27B5FE0900C2319B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BD819A27B5FE0900C2319B /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		8130FD4F27BA55D6003BACEC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		8130FD5027BA55D6003BACEC /* ChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		8185145D27C75C090096A021 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8185145F27C75C580096A021 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		81BD819327B5FE0900C2319B /* Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BD819627B5FE0900C2319B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81BD819827B5FE0900C2319B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			children = (
 				8130FD4F27BA55D6003BACEC /* ChartView.swift */,
 				8130FD5027BA55D6003BACEC /* ChartView.xib */,
+				8185145F27C75C580096A021 /* PieChartView.swift */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 				81BD819C27B5FE0900C2319B /* Main.storyboard */,
 				81BD819F27B5FE0C00C2319B /* Assets.xcassets */,
 				81BD81A127B5FE0C00C2319B /* LaunchScreen.storyboard */,
+				8185145D27C75C090096A021 /* UIView+Extension.swift */,
 				81BD81A427B5FE0C00C2319B /* Info.plist */,
 			);
 			path = Chart;
@@ -153,9 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8185146027C75C580096A021 /* PieChartView.swift in Sources */,
 				81BD819B27B5FE0900C2319B /* ViewController.swift in Sources */,
 				81BD819727B5FE0900C2319B /* AppDelegate.swift in Sources */,
 				81BD819927B5FE0900C2319B /* SceneDelegate.swift in Sources */,
+				8185145E27C75C090096A021 /* UIView+Extension.swift in Sources */,
 				8130FD5127BA55D6003BACEC /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
